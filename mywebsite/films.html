@@ -47,6 +47,7 @@
             border-radius: 50px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -502,6 +503,7 @@
             display: none;
             align-items: center;
             justify-content: center;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
         
@@ -733,7 +735,7 @@
                 <!-- Video 1 -->
                 <div class="video-card-enhanced" data-video-id="vd1">
                     <div class="video-thumbnail">
-                        <video class="video-preview" autoplay muted loop playsinline>
+                        <video class="video-preview" autoplay muted loop>
                             <source src="assets/videos/vd1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -762,7 +764,7 @@
                 <!-- Video 2 -->
                 <div class="video-card-enhanced" data-video-id="vd2">
                     <div class="video-thumbnail">
-                        <video class="video-preview" autoplay muted loop playsinline>
+                        <video class="video-preview" autoplay muted loop>
                             <source src="assets/videos/vd2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -791,7 +793,7 @@
                 <!-- Video 3 -->
                 <div class="video-card-enhanced" data-video-id="vd3">
                     <div class="video-thumbnail">
-                        <video class="video-preview" autoplay muted loop playsinline>
+                        <video class="video-preview" autoplay muted loop>
                             <source src="assets/videos/vd3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -820,7 +822,7 @@
                 <!-- Video 4 -->
                 <div class="video-card-enhanced" data-video-id="vd4">
                     <div class="video-thumbnail">
-                        <video class="video-preview" autoplay muted loop playsinline>
+                        <video class="video-preview" autoplay muted loop>
                             <source src="assets/videos/vd4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -849,7 +851,7 @@
                 <!-- Video 5 -->
                 <div class="video-card-enhanced" data-video-id="vd5">
                     <div class="video-thumbnail">
-                        <video class="video-preview" autoplay muted loop playsinline>
+                        <video class="video-preview" autoplay muted loop>
                             <source src="assets/videos/vd5.webm" type="video/webm">
                             Your browser does not support the video tag.
                         </video>
@@ -868,6 +870,35 @@
                                     </span>
                                 </div>
                                 <div class="play-button" onclick="openVideoModal('vd5.webm')">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6 - New Video -->
+                <div class="video-card-enhanced" data-video-id="upvedio">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" autoplay muted loop>
+                            <source src="assets/videos/upvedio.mp4" type="video/mp4">
+                            Your browser does not support video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-content">
+                                <h3 class="video-title" data-translate="featured_video_1_title">
+                                    Exclusive Wedding Moments
+                                </h3>
+                                <p class="video-description" data-translate="featured_video_1_desc">
+                                    Discover the magic of love and celebration through our lens, where every frame tells a beautiful story of eternal commitment.
+                                </p>
+                                <div class="video-meta">
+                                    <span class="quality">HD</span>
+                                    <span class="badge-professional" data-translate="professional">
+                                        Professional
+                                    </span>
+                                </div>
+                                <div class="play-button" onclick="openVideoModal('upvedio.mp4')">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
@@ -901,10 +932,10 @@
                 </div>
                 <p data-translate="footer_description" style="color: var(--color-text-muted); font-size: 0.8rem; margin-bottom: 0.8rem; line-height: 1.3;">Luxury wedding photography & cinematography. Crafting timeless stories since 2025.</p>
                 <div class="social-links" style="margin-top: 0.8rem; display: flex; justify-content: center; gap: 0.8rem;">
-                    <a href="https://www.instagram.com/events.studi0?igsh=MTRwaDYyYjhjM21haQ==" target="_blank"  title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@events.studi0?_r=1&_t=ZS-93ZK33YRGg1" target="_blank"  title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://snapchat.com/t/erS92aZh" target="_blank"  title="Snapchat" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
-                    <a href="https://wa.me/9647510579521" target="_blank"  title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/events.studi0?igsh=MTRwaDYyYjhjM21haQ==" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@events.studi0?_r=1&_t=ZS-93ZK33YRGg1" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://snapchat.com/t/erS92aZh" target="_blank" rel="noopener" title="Snapchat" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+                    <a href="https://wa.me/9647510579521" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -942,7 +973,7 @@
                     <a href="https://wa.me/9647510579521">+964 751 057 9521</a><br><br>
                     <strong data-translate="location_label">Location:</strong><br>
                     <div style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 8px; padding: 0.8rem; margin-top: 0.5rem;">
-                        <a href="https://maps.google.com/maps?q=37.145811,42.660593&ll=37.145811,42.660593&z=16" target="_blank" style="color: #ff6b35; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://maps.google.com/maps?q=37.145811,42.660593&ll=37.145811,42.660593&z=16" target="_blank" rel="noopener" style="color: #ff6b35; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
                             <i class="fas fa-map-marker-alt"></i>
                             <span data-translate="location_text">Zakho - Duhok - Erbil 📍</span>
                         </a>
@@ -958,7 +989,7 @@
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                 <p >&copy; 2024 Events Studio. All rights reserved. Crafted with love and artistry.</p>
                 <div class="developer-credit">
-                    <a href="https://www.instagram.com/sallimmustafaaa?igsh=ODJvbXdrNThlZThv" target="_blank" class="developer-link">
+                    <a href="https://www.instagram.com/sallimmustafaaa?igsh=ODJvbXdrNThlZThv" target="_blank" rel="noopener" class="developer-link">
                         <span class="developer-text"><span >Developed by</span> <strong>SalimMustefa</strong></span>
                     </a>
                 </div>

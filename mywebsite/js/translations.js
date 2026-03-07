@@ -36,6 +36,10 @@ const translations = {
         copyright: "© 2024 Events Studio. All rights reserved. Crafted with love and artistry.",
         developed_by: "Developed by",
         
+        // Featured Video
+        featured_video_1_title: "Exclusive Wedding Moments",
+        featured_video_1_desc: "Beautiful wedding moments captured with love and celebration.",
+        
         // Contact Page
         get_in_touch: "Get In Touch",
         contact_us: "Contact Us",
@@ -688,6 +692,10 @@ const translations = {
         location_text: "زاخو - دوهوك - أربيل 📍",
         hours_text: "مفتوح كل يوم: 10 صباحاً - 10 مساءً",
         developed_by: "تطوير بواسطة",
+        
+        // Featured Video
+        featured_video_1_title: "لحظات زفاف حصرية",
+        featured_video_1_desc: "لحظات زفاف جميلة مليئة بالحب والاحتفال.",
     }
 };
 

@@ -1031,6 +1031,249 @@
             border: none;
         }
         
+        /* Video Section Styles */
+        .videos-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .videos-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .videos-header h2 {
+            color: #ff6b35;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .videos-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .video-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(255, 107, 53, 0.05);
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 107, 53, 0.3);
+            border-color: #ff6b35;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .video-item:hover .video-container video {
+            transform: scale(1.05);
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+        
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 53, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .video-item:hover .play-button {
+            background: #ff6b35;
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-info h3 {
+            color: #ff6b35;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .video-modal-content video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
+        .video-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: rgba(255, 107, 53, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+        
+        .video-modal-close:hover {
+            background: #ff6b35;
+            transform: scale(1.1);
+        }
+        
+        /* Mobile Responsive for Videos */
+        @media (max-width: 768px) {
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .videos-header h2 {
+                font-size: 2rem;
+            }
+            
+            .video-container {
+                height: 200px;
+            }
+            
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .video-info {
+                padding: 1rem;
+            }
+            
+            .video-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .video-info p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .videos-section {
+                padding: 2rem 0;
+                margin-top: 2rem;
+            }
+            
+            .videos-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .videos-header p {
+                font-size: 1rem;
+            }
+            
+            .video-container {
+                height: 180px;
+            }
+            
+            .play-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 1024px) {
             .gallery-grid-modern {
@@ -1401,6 +1644,55 @@
                         <p data-translate="wedding_photography_27_desc">Special moment 10</p>
                     </div>
                 </div>
+                <div class="slide">
+                    <img src="assets/images/28.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_28_title">Wedding Photography 28</h3>
+                        <p data-translate="wedding_photography_28_desc">Elegant celebration</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/29.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_29_title">Wedding Photography 29</h3>
+                        <p data-translate="wedding_photography_29_desc">Golden hour magic</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/30.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_30_title">Wedding Photography 30</h3>
+                        <p data-translate="wedding_photography_30_desc">Timeless romance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/31.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_31_title">Wedding Photography 31</h3>
+                        <p data-translate="wedding_photography_31_desc">Perfect harmony</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/32.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_32_title">Wedding Photography 32</h3>
+                        <p data-translate="wedding_photography_32_desc">Joyful union</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/33.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_33_title">Wedding Photography 33</h3>
+                        <p data-translate="wedding_photography_33_desc">Divine blessing</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/34.jpg"  alt="Wedding Photography">
+                    <div class="slide-content">
+                        <h3 data-translate="wedding_photography_34_title">Wedding Photography 34</h3>
+                        <p data-translate="wedding_photography_34_desc">Eternal promise</p>
+                    </div>
+                </div>
                 
                 <!-- Slider Navigation -->
                 <button class="slider-nav slider-prev" onclick="changeSlide(-1)">‹</button>
@@ -1617,6 +1909,62 @@
                         <p data-translate="wedding_photography_26_desc">Special moment 9</p>
                     </div>
                 </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/28.jpg" alt="Wedding Photography 28" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_28_title">Wedding Photography 28</h3>
+                        <p data-translate="wedding_photography_28_desc">Elegant celebration</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/29.jpg" alt="Wedding Photography 29" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_29_title">Wedding Photography 29</h3>
+                        <p data-translate="wedding_photography_29_desc">Golden hour magic</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/30.jpg" alt="Wedding Photography 30" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_30_title">Wedding Photography 30</h3>
+                        <p data-translate="wedding_photography_30_desc">Timeless romance</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/31.jpg" alt="Wedding Photography 31" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_31_title">Wedding Photography 31</h3>
+                        <p data-translate="wedding_photography_31_desc">Perfect harmony</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/32.jpg" alt="Wedding Photography 32" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_32_title">Wedding Photography 32</h3>
+                        <p data-translate="wedding_photography_32_desc">Joyful union</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/33.jpg" alt="Wedding Photography 33" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_33_title">Wedding Photography 33</h3>
+                        <p data-translate="wedding_photography_33_desc">Divine blessing</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-modern">
+                    <img src="assets/images/34.jpg" alt="Wedding Photography 34" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3 data-translate="wedding_photography_34_title">Wedding Photography 34</h3>
+                        <p data-translate="wedding_photography_34_desc">Eternal promise</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Centered Final Photo -->
@@ -1804,7 +2152,17 @@
                     wedding_photography_30_title: "Wedding Photography 30",
                     wedding_photography_30_desc: "Special moment 13",
                     wedding_photography_31_title: "Wedding Photography 31",
-                    wedding_photography_31_desc: "The perfect ending"
+                    wedding_photography_31_desc: "Perfect harmony",
+                    wedding_photography_32_title: "Wedding Photography 32",
+                    wedding_photography_32_desc: "Joyful union",
+                    wedding_photography_33_title: "Wedding Photography 33",
+                    wedding_photography_33_desc: "Divine blessing",
+                    wedding_photography_34_title: "Wedding Photography 34",
+                    wedding_photography_34_desc: "Eternal promise",
+                    videos_title: "Featured Videos",
+                    videos_description: "Experience the magic of our cinematography and relive your precious moments through our lens.",
+                    featured_video_1_title: "Wedding Highlights",
+                    featured_video_1_desc: "A beautiful compilation of our most memorable wedding moments, capturing love, joy, and celebration."
                 },
                 ar: {
                     wedding_photography_1_title: "تصوير زفاف 1",
@@ -1862,13 +2220,23 @@
                     wedding_photography_27_title: "تصوير زفاف 27",
                     wedding_photography_27_desc: "لحظة خاصة 10",
                     wedding_photography_28_title: "تصوير زفاف 28",
-                    wedding_photography_28_desc: "لحظة خاصة 11",
+                    wedding_photography_28_desc: "احتفال أنيق",
                     wedding_photography_29_title: "تصوير زفاف 29",
-                    wedding_photography_29_desc: "لحظة خاصة 12",
+                    wedding_photography_29_desc: "ساعة ذهبية سحرية",
                     wedding_photography_30_title: "تصوير زفاف 30",
-                    wedding_photography_30_desc: "لحظة خاصة 13",
+                    wedding_photography_30_desc: "رومانسية خالدة",
                     wedding_photography_31_title: "تصوير زفاف 31",
-                    wedding_photography_31_desc: "النهاية المثالية"
+                    wedding_photography_31_desc: "انسجام مثالي",
+                    wedding_photography_32_title: "تصوير زفاف 32",
+                    wedding_photography_32_desc: "اتحاد سعيد",
+                    wedding_photography_33_title: "تصوير زفاف 33",
+                    wedding_photography_33_desc: "بركة إلهية",
+                    wedding_photography_34_title: "تصوير زفاف 34",
+                    wedding_photography_34_desc: "وعد أبدي",
+                    videos_title: "الفيديوهات المميزة",
+                    videos_description: "استمتع بسحر السينماتوغرافيا الخاصة بنا واستعد ذكرياتك الثمينة من خلال عدستنا.",
+                    featured_video_1_title: "أجمل لحظات الزفاف",
+                    featured_video_1_desc: "مجموعة رائعة من أجمل لحظات زفافنا، التي تلتقط الحب والفرح والاحتفال."
                 }
             };
 

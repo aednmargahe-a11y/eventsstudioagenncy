@@ -311,6 +311,66 @@
         .hamburger-modern:hover::before {
             opacity: 1;
         }
+        
+        /* Active state - transforms to X */
+        .navbar-toggler.active .hamburger-modern {
+            transform: rotate(90deg);
+        }
+        
+        .navbar-toggler.active .line1 {
+            transform: rotate(45deg) translate(6px, 6px);
+            animation: none;
+            background: #ff8c42;
+        }
+        
+        .navbar-toggler.active .line2 {
+            opacity: 0;
+            transform: scaleX(0);
+            animation: none;
+        }
+        
+        .navbar-toggler.active .line3 {
+            transform: rotate(-45deg) translate(6px, -6px);
+            animation: none;
+            background: #ff8c42;
+        }
+        
+        .navbar-toggler.active .line::after {
+            display: none;
+        }
+        
+        /* Remove default styles */
+        .navbar-toggler {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            padding: 8px !important;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        
+        /* Glow effect */
+        .hamburger-modern::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 8px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .hamburger-modern:hover::before {
+            opacity: 1;
+        }
     </style>
 </head>
 <body data-page-title="nav_team">
